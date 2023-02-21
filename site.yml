@@ -1,0 +1,6 @@
+- name: Install some packages
+  hosts: all
+  tasks:
+    - name: Install a superior text editor
+      ansible.builtin.package:
+        name: vim
