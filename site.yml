@@ -10,17 +10,17 @@
         name: "*"
         state: latest
       when:
-        - ansible_pkg_mgr is "dnf"
+        - ansible_pkg_mgr == "dnf"
 
     - name: Upgrade all packages
       ansible.builtin.yum:
         name: "*"
         state: latest
       when:
-        - ansible_pkg_mgr is "yum"
+        - ansible_pkg_mgr == "yum"
 
     - name: Upgrade all packages
       ansible.builtin.apt:
         upgrade: yes
       when:
-        - ansible_pkg_mgr is "apt"
+        - ansible_pkg_mgr == "apt"
