@@ -1,0 +1,23 @@
+- name: Install a superior text editor
+  ansible.builtin.package:
+    name: vim
+
+- name: Upgrade all packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+  when:
+    - ansible_pkg_mgr == "dnf"
+
+- name: Upgrade all packages
+  ansible.builtin.yum:
+    name: "*"
+    state: latest
+  when:
+    - ansible_pkg_mgr == "yum"
+
+- name: Upgrade all packages
+  ansible.builtin.apt:
+    upgrade: yes
+  when:
+    - ansible_pkg_mgr == "apt"
