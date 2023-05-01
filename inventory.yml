@@ -1,0 +1,5 @@
+all:
+  children:
+    lamp:
+      hosts:
+        example-lamp01.s.uw.edu:
